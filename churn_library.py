@@ -5,24 +5,20 @@ Date: 03-Sept-2022
 '''
 
 # import libraries
-import os
-os.environ['QT_QPA_PLATFORM']='offscreen'
-import numpy as np
-
-
-import os
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import classification_report, plot_roc_curve
-
-from sklearn.model_selection import GridSearchCV
-from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier
-
-
 import joblib
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import classification_report, plot_roc_curve
+from sklearn.model_selection import train_test_split
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+import os
+os.environ['QT_QPA_PLATFORM'] = 'offscreen'
+
+
 os.environ['QT_QPA_PLATFORM'] = 'offscreen'
 
 
@@ -203,6 +199,7 @@ def my_classification_report(y_train,
     This function is used to write Random forest report
     '''
     # Random forest report
+    plt.figure()
     plt.rc('figure', figsize=(5, 5))
     plt.text(0.01, 1.25, str(name),
              {'fontsize': 10},
@@ -319,8 +316,7 @@ def test_model(cv_rfc, lrc, x_train, x_test):
     y_train_preds_rf = cv_rfc.best_estimator_.predict(x_train)
     y_test_preds_rf = cv_rfc.best_estimator_.predict(x_test)
     y_train_preds_lr = lrc.predict(x_train)
-    y_test_preds_lr  = lrc.predict(x_test)
-
+    y_test_preds_lr = lrc.predict(x_test)
     return y_train_preds_rf, y_test_preds_rf, y_train_preds_lr, y_test_preds_lr
 
 
@@ -336,10 +332,10 @@ def plot_ROC_curve(lrc, cv_rfc, X_test, y_test):
     axis = plt.gca()
     plot_roc_curve(lrc, X_test, y_test, ax=axis, alpha=0.8)
     plot_roc_curve(cv_rfc.best_estimator_,
-                              X_test,
-                              y_test,
-                              ax=axis,
-                              alpha=0.8)
+                   X_test,
+                   y_test,
+                   ax=axis,
+                   alpha=0.8)
     fname = result_path + '/roc_curve_result.png'
     plt.savefig(fname=fname)
 
@@ -385,7 +381,7 @@ def train_models(X_train,
         cv_rfc, lrc, X_train, X_test)
     # Plot ROC curve
     plot_ROC_curve(lrc, cv_rfc, X_test, y_test)
-    
+
     # Compute and results:
     classification_report_image(y_train, y_test,
                                 y_train_preds_lr, y_train_preds_rf,
@@ -398,11 +394,13 @@ def train_models(X_train,
 
 
 if __name__ == "__main__":
-    file = import_data(r"./data/bank_data.csv")
+    df_output = import_data(r"./data/bank_data.csv")
+
+    perform_eda(df=df_output)
 
     # Feature engineering
     X_TRAIN, X_TEST, Y_TRAIN, Y_TEST = perform_feature_engineering(
-        df=file, response='Churn')
+        df=df_output, response='Churn')
 
     # Model training,prediction and evaluation
     train_models(

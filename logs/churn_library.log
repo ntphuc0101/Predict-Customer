@@ -1,5 +1,5 @@
 root - INFO - Testing import_data: SUCCESS
-root - INFO - Testing perform_eda: SUCCESS
+root - INFO - Testing perform_eda: SUCCESS, Input is correct dataframe type
 root - INFO - File Churn.png was found
 root - INFO - File Customer_Age.png was found
 root - INFO - File Marital_Status.png was found
@@ -8,8 +8,7 @@ root - INFO - Testing encoder_helper: SUCCESS
 root - INFO - Testing encoder_helper(data_frame, category_lst=[]): SUCCESS
 root - INFO - Testing perform_feature_engineering: `'Churn'` column is present: SUCCESS
 root - INFO - Testing test_train_models(train_models)
-root - INFO - File rfc_model.pkl was found
-root - INFO - File logistic_model.pkl was found
+root - INFO - Testing train_models): SUCCESS
 root - INFO - File roc_curve_result.png was found
 root - INFO - File rf_results.png was found
 root - INFO - File logistic_results.png was found

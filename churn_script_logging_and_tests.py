@@ -1,3 +1,9 @@
+'''
+In this file, there are functions of testing churn customer analysis
+Author: Phuc Nguyen Thai Vinh
+Date: 03-Sept-2022
+'''
+
 import os
 import logging
 import churn_library as cls
@@ -45,9 +51,10 @@ def test_eda(perform_eda, import_data):
     path = './images/eda/'
     try:
         data = import_data(r"./data/bank_data.csv")
-        print(data)
+        assert data.shape[0] > 0
+        assert data.shape[1] > 0
         perform_eda(data)
-        logging.info("Testing perform_eda: SUCCESS")
+        logging.info("Testing perform_eda: SUCCESS, Input is correct dataframe type")
     except AttributeError as err:
         logging.error("Testing perform_eda: Input should be a dataframe")
         raise err
@@ -130,12 +137,15 @@ def test_train_models(train_models):
     (X_train, X_test, y_train, y_test) = cls.perform_feature_engineering(
         df=df,
         response='Churn')
-    train_models(X_train, X_test, y_train, y_test)
-    logging.info("Testing test_train_models(train_models)")
-    path = './models/'
-    input_models = ['rfc_model.pkl', 'logistic_model.pkl']
-    for input_model in input_models:
-        test_eda_output(path, input_model)
+    try:
+        logging.info("Testing test_train_models(train_models)")
+        train_models(X_train, X_test, y_train, y_test)
+        assert os.path.isfile("./models/rfc_model.pkl") is True
+        assert os.path.isfile("./models/logistic_model.pkl") is True
+        logging.info("Testing train_models): SUCCESS")
+    except AssertionError as err:
+        logging.error("Testing train_models(): UNSUCCESS")
+        raise err    
     path = './images/results/'
     input_images = [
         'roc_curve_result.png',
