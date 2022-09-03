@@ -34,7 +34,7 @@ Git clone
 
 python -m pip install -r requirements_py3.8.txt
 
-3.Activate the conda environment
+3. Activate the conda environment
 
 conda activate env
 
