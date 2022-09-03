@@ -8,16 +8,16 @@ In this project, we will identify credit card customers that are most likely to 
 ## Files and data description
 Overview of the files and data present in the root directory. 
 These dataset is downloaded from Kaggle, and its name is Credit Card customers.
-churn_library.py - churn customer analysis
-churn_script_logging_and_testing.py - testing functions from churn_library.py
-data folder - Credit Card customers
-images - output images 
-logs - logging files
-models - model files
+#churn_library.py - churn customer analysis
+#churn_script_logging_and_testing.py - testing functions from churn_library.py
+#data folder - Credit Card customers
+#images - output images 
+#logs - logging files
+#models - model files
 
 ## Running Files
 
-There are several steps to run this projects -  #git and #conda:
+There are several steps to run this projects:
 #git - for git clone link to cloning projects
 #conda - for activating environment
 
