@@ -319,6 +319,8 @@ def test_model(cv_rfc, lrc, x_train, x_test):
     y_train_preds_rf = cv_rfc.best_estimator_.predict(x_train)
     y_test_preds_rf = cv_rfc.best_estimator_.predict(x_test)
     y_train_preds_lr = lrc.predict(x_train)
+    y_test_preds_lr  = lrc.predict(x_test)
+
     return y_train_preds_rf, y_test_preds_rf, y_train_preds_lr, y_test_preds_lr
 
 
