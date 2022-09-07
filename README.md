@@ -6,14 +6,49 @@
 In this project, we will identify credit card customers that are most likely to churn. The Project will include a Python package for a machine learning project that follows coding (PEP8) and engineering best practices for implementing software (modular, documented, and tested). The package will also have the flexibility of being run interactively or from the command-line interface (CLI).
 
 ## Files and data description
-Overview of the files and data present in the root directory. 
+Overview of the files and data present in the root directory.
+
+```
+.
+├── churn_library.py
+├── churn_notebook.ipynb
+├── churn_script_logging_and_tests.py
+├── data
+│   └── bank_data.csv
+├── Guide.ipynb
+├── images
+│   ├── eda
+│   │   ├── Churn.png
+│   │   ├── Customer_Age.png
+│   │   ├── Gender.png
+│   │   ├── heatmap.png
+│   │   ├── Marital_Status.png
+│   │   └── Total_Trans_Amt.png
+│   └── results
+│       ├── feature_importances.png
+│       ├── logistic_results.png
+│       ├── rf_results.png
+│       └── roc_curve_result.png
+├── logs
+│   └── churn_library.log
+├── models
+│   ├── logistic_model.pkl
+│   └── rfc_model.pkl
+├── __pycache__
+│   ├── churn_library2.cpython-36.pyc
+├── README.md
+└── requirements.txt
+```
+
+
+
 These dataset is downloaded from Kaggle, and its name is Credit Card customers.
-churn_library.py - churn customer analysis
-churn_script_logging_and_testing.py - testing functions from churn_library.py
-data folder - Credit Card customers
-images - output images 
-logs - logging files
-models - model files
+`churn_library.py` - churn customer analysis
+`churn_script_logging_and_testing.py` - testing functions from churn_library.py
+`data folder` - Credit Card customers
+`images` - output images 
+`logs` - logging files
+`models` - model files
 
 ## Running Files
 
@@ -21,15 +56,15 @@ There are several steps to run this projects -  #git and #conda:
 #git - for git clone link to cloning projects
 #conda - for activating environment
 
-1.Clone repository from github
+1. Clone repository from github
 
 Git clone
 
-2.Create a conda environment
+2. Create a conda environment
 
 python -m pip install -r requirements_py3.8.txt
 
-3.Activate the conda environment
+3. Activate the conda environment
 
 conda activate env
 
