@@ -57,20 +57,25 @@ There are several steps to run this projects -  #git and #conda:
 #conda - for activating environment
 
 1. Clone repository from github
-
-Git clone
+     ```
+     Git clone
+     ```
 
 2. Create a conda environment
-
-python -m pip install -r requirements_py3.8.txt
+     ```
+     python -m pip install -r requirements_py3.8.txt
+     ```
 
 3. Activate the conda environment
-
+     ```
      conda activate env
+     ```
 
 
-For Installing the linter and auto-formatter: pip install pylint pip install autopep8
-
-Run: python churn_library.py for data analysis
-     python python_script_logging_and_tests.py for testing functions of churn prediction
+For Installing the linter and auto-formatter: 
+```
+pip install pylint pip install autopep8
+```
+Run: ```python churn_library.py for data analysis```
+     ```python python_script_logging_and_tests.py for testing functions of churn prediction```
 
