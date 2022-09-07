@@ -43,12 +43,12 @@ Overview of the files and data present in the root directory.
 
 
 These dataset is downloaded from Kaggle, and its name is Credit Card customers.
-`churn_library.py` - churn customer analysis
-`churn_script_logging_and_testing.py` - testing functions from churn_library.py
-`data folder` - Credit Card customers
-`images` - output images 
-`logs` - logging files
-`models` - model files
+1. `churn_library.py` - churn customer analysis
+2. `churn_script_logging_and_testing.py` - testing functions from churn_library.py
+3. `data folder` - Credit Card customers
+4. `images` - output images 
+5. `logs` - logging files
+6. `models` - model files
 
 ## Running Files
 
@@ -66,7 +66,7 @@ python -m pip install -r requirements_py3.8.txt
 
 3. Activate the conda environment
 
-conda activate env
+     conda activate env
 
 
 For Installing the linter and auto-formatter: pip install pylint pip install autopep8
